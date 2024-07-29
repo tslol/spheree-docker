@@ -6,12 +6,11 @@ FROM typesense/typesense:27.0.rc27
 # Create the data directory inside the container
 RUN mkdir /data
 
-# (Optional) Customize configuration
-# COPY typesense.ini /etc/typesense/typesense.ini
-RUN echo "TYPESENSE_API_KEY=${TYPESENSE_API_KEY}"
+# Copy the start script into the container
+COPY start.sh /start.sh
 
-# Expose the default Typesense port
-EXPOSE 8108
+# Make the start script executable
+RUN chmod +x /start.sh
 
-# Set the entrypoint command to run Typesense with the specified options
-CMD ["typesense-server", "--data-dir", "/data", "--api-key", "${TYPESENSE_API_KEY}", "--enable-cors"]
+# Set the entrypoint command to run the start script
+ENTRYPOINT ["/start.sh"]
