@@ -1,8 +1,9 @@
-name: sample-dockerfile
+name: spheree-typesense
 services:
 - dockerfile_path: Dockerfile
   github:
     branch: main
     deploy_on_push: true
-    repo: digitalocean/sample-dockerfile
-  name: sample-dockerfile
+    repo: tslol/spheree-docker
+  name: spheree-docker
+
