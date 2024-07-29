@@ -13,4 +13,4 @@ RUN mkdir /data
 EXPOSE 8108
 
 # Set the entrypoint command to run Typesense with the specified options
-CMD ["typesense-server", "--data-dir", "/data", "--api-key", "${TYPESENSE_API_KEY}", "--enable-cors"]
+CMD ["typesense-server", "--data-dir", "/data", "--api-key", $TYPESENSE_API_KEY, "--enable-cors"]
