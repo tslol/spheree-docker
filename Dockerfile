@@ -1,4 +1,4 @@
-FROM typesense/typesense:latest
+FROM typesense/typesense:27.0.rc27
 
 # (Optional) Set a specific Typesense version
 # ENV TYPESENSE_VERSION 0.25.1
