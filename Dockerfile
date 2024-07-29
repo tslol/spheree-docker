@@ -8,6 +8,7 @@ RUN mkdir /data
 
 # (Optional) Customize configuration
 # COPY typesense.ini /etc/typesense/typesense.ini
+RUN echo "TYPESENSE_API_KEY=${TYPESENSE_API_KEY}"
 
 # Expose the default Typesense port
 EXPOSE 8108
